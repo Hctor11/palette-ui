@@ -26,8 +26,8 @@ export default function Home() {
           );
         })}
       </h1>
-      <div className="second-title-container">
-        <h4 className="second-main-title text-center fw300 fs18">
+      <div className="second-title-container h-center">
+        <h4 className="second-main-title text-center fw300 fs18 h-center">
           Elevate your design with a stunning color palette that breathes life
           into your interfaces. Discover the power of captivating colors and
           create visually striking experiences that engage and inspire.

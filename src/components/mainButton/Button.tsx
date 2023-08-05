@@ -1,4 +1,5 @@
 import Link from "next/link"
+import './button.sass'
 
 const Button = () => {
   return (
