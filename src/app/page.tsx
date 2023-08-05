@@ -1,5 +1,6 @@
 import "./main.sass";
 import Nav from "@/components/nav/Nav";
+import Button from "@/components/mainButton/Button";
 import generateRandomColor from "@/util/randomColorGenerator";
 
 export default function Home() {
@@ -32,6 +33,7 @@ export default function Home() {
           create visually striking experiences that engage and inspire.
         </h4>
       </div>
+      <Button></Button>
     </main>
   );
 }
