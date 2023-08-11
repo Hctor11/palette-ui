@@ -1,0 +1,16 @@
+[
+  {
+    "_id": "USER_ID1",
+    "username": "user1",
+    "email": "hectorrrivera1010@gmail.com",
+    "password": "123",
+    "shared_palettes": ["PALETTE_ID1", "PALETTE_ID2"]
+  },
+  {
+    "_id": "USER_ID2",
+    "username": "user2",
+    "email": "user2@example.com",
+    "password": "hashed_password",
+    "shared_palettes": ["PALETTE_ID3"]
+  }
+]

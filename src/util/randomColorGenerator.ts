@@ -6,7 +6,7 @@ const generateRandomColor = (): string => {
       const saturation = 70 + Math.random() * 20;
       const lightness = 50 + Math.random() * 20;
 
-      color = `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+      color = `hsl(${Math.floor(hue)}, ${Math.ceil(saturation)}%, ${Math.floor(lightness)}%)`;
     }
 
     return color;

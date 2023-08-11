@@ -1,0 +1,20 @@
+[
+    {
+      "_id": "PALETTE_ID1",
+      "palette_name": "Summer Palette",
+      "colors": ["#FF5733", "#33FF8F", "#3363FF", "#A133FF", "#FF336E"],
+      "owner": "USER_ID1"
+    },
+    {
+      "_id": "PALETTE_ID2",
+      "palette_name": "Neutral Palette",
+      "colors": ["#EFEFEF", "#D3D3D3", "#BEBEBE", "#A9A9A9", "#808080"],
+      "owner": "USER_ID2"
+    },
+    {
+      "_id": "PALETTE_ID3",
+      "palette_name": "Vibrant Palette",
+      "colors": ["#FF5733", "#FFC933", "#33FF8F", "#3363FF"],
+      "owner": "USER_ID2"
+    }
+  ]
