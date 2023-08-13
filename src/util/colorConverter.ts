@@ -16,16 +16,15 @@ export const hslToHex = (h: number, s: number, l: number): string => {
 };
 
 export const hslToRGB = (h: number, s: number, l: number): string => {
-  // Must be fractions of 1
   s /= 100;
   l /= 100;
 
-  let c = (1 - Math.abs(2 * l - 1)) * s,
-    x = c * (1 - Math.abs(((h / 60) % 2) - 1)),
-    m = l - c / 2,
-    r = 0,
-    g = 0,
-    b = 0;
+  let c:number = (1 - Math.abs(2 * l - 1)) * s,
+    x:number = c * (1 - Math.abs(((h / 60) % 2) - 1)),
+    m:number = l - c / 2,
+    r:number = 0,
+    g:number = 0,
+    b:number = 0;
 
   if (0 <= h && h < 60) {
     r = c;
@@ -58,3 +57,4 @@ export const hslToRGB = (h: number, s: number, l: number): string => {
 
   return "rgb(" + r + "," + g + "," + b + ")";
 };
+

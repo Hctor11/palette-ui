@@ -8,6 +8,4 @@ const generatePalette = (numColors: number):Array<string> => {
     return colors
 }
 
-console.log(generatePalette(6))
-
 export default generatePalette
