@@ -2,9 +2,57 @@
     margin: 0
     padding: 0
     box-sizing: border-box
+    max-height: 100vh
 
 .color
-    height: 90vh
+    display: flex
+    flex-direction: column
+    justify-content: center
+    gap: 15px
+    align-items: center
+    height: 88vh
     width: 100%
-    transition: .3s ease-in-out
+    transition: .1s ease-in
 
+.color-name
+    padding: 3px
+    background-color: #fff
+    border-radius: 3px
+    position: relative
+    top: 50%
+
+.color:hover
+    .color-name
+        transition: .1s ease-in
+    
+    #button
+        transition: .1s ease-in
+        visibility: visible
+
+    .color-name:hover
+        cursor: pointer
+        transform: scale(1.1) 
+
+#button
+    visibility: hidden
+    background-color: rgba(0, 0, 0, 0)
+    border-style: none
+    cursor: pointer
+
+#button:hover
+    visibility: visible
+    transform: scale(1.2) 
+
+.top-bar
+    display: flex
+    justify-content: center
+    padding: 10px
+
+.generate-button
+    cursor: pointer
+    height: 75px
+    border-style: none
+    width: 100vw
+    text-decoration: none
+    font: inherit
+    font-weight: 500

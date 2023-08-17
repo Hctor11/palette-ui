@@ -1,3 +1,5 @@
+"use client"
+
 import "./main.sass";
 import Nav from "@/components/nav/Nav";
 import Button from "@/components/mainButton/Button";

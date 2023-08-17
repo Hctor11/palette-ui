@@ -1,5 +1,3 @@
-"use client"
-
 import type { Metadata } from 'next'
 import { Wix_Madefor_Display } from 'next/font/google'
 

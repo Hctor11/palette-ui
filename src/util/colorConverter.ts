@@ -1,19 +1,56 @@
 // Color converter to make HSL code to Hex color
 
-export const hslToHex = (h: number, s: number, l: number): string => {
-  l /= 100;
+export const hslToHex = (hsl:string): string => {
+  // Extracting values from the HSL string
+  const regex = /hsl\((\d+),\s*([\d.]+)%,\s*([\d.]+)%\)/;
+  const match = hsl.match(regex);
 
-  const a: number = (s * Math.min(l, 1 - l)) / 100;
-  const rounder = (n: number): string => {
-    const k: number = (n + h / 30) % 12;
-    const color: number = l - a * Math.max(Math.min(k - 3, 9 - k, 1), -1);
-    return Math.round(255 * color)
-      .toString(16)
-      .padStart(2, "0");
-  };
+  if (!match) {
+    throw new Error("Invalid HSL color string");
+  }
 
-  return `#${rounder(0)}${rounder(8)}${rounder(4)}`;
+  const hue = parseInt(match[1]);
+  const saturation = parseFloat(match[2]);
+  const lightness = parseFloat(match[3]);
+
+  // Convert HSL to RGB
+  const c = (1 - Math.abs(2 * (lightness * 0.01) - 1)) * (saturation * 0.01);
+  const x = c * (1 - Math.abs(((hue / 60) % 2) - 1));
+  const m = lightness * 0.01 - c * 0.5;
+
+  let red = 0;
+  let green = 0;
+  let blue = 0;
+
+  if (0 <= hue && hue < 60) {
+    red = c;
+    green = x;
+  } else if (60 <= hue && hue < 120) {
+    red = x;
+    green = c;
+  } else if (120 <= hue && hue < 180) {
+    green = c;
+    blue = x;
+  } else if (180 <= hue && hue < 240) {
+    green = x;
+    blue = c;
+  } else if (240 <= hue && hue < 300) {
+    red = x;
+    blue = c;
+  } else if (300 <= hue && hue < 360) {
+    red = c;
+    blue = x;
+  }
+
+  red = Math.round((red + m) * 255);
+  green = Math.round((green + m) * 255);
+  blue = Math.round((blue + m) * 255);
+
+  // Convert RGB to hexadecimal
+  const hex = `#${(red << 16 | green << 8 | blue).toString(16).padStart(6, '0')}`;
+  return hex;
 };
+
 
 export const hslToRGB = (h: number, s: number, l: number): string => {
   s /= 100;
