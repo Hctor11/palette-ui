@@ -3,23 +3,25 @@
 import generatePalette from "@/util/paletteGenerator";
 import { useEffect, useState } from "react";
 import "./generator.sass";
-
+import generateRandomColor from "./../../util/randomColorGenerator";
 
 const Page = () => {
-  const [palette, setPalette] = useState<string[]>(generatePalette(5));
+  const [palette, setPalette] = useState<string[]>([]);
   const [numberOfColors, setNumberOfColors] = useState(5);
 
   useEffect(() => {
-    generatePalette(numberOfColors)
-  },[numberOfColors])
+    setPalette(generatePalette(numberOfColors));
+  }, [numberOfColors]);
 
   const handleSumColorClick = () => {
-    setNumberOfColors(numberOfColors + 1)
-  }
+    setNumberOfColors(numberOfColors + 1);
+  };
 
   const handleMinusColorClick = () => {
-    
-  }
+    numberOfColors > 4 ?
+    setNumberOfColors(numberOfColors - 1)
+    : null
+  };
 
   return (
     <div>
@@ -47,15 +49,13 @@ const Page = () => {
       </button>
       <button
         onClick={() => {
-          handleSumColorClick()
+          handleSumColorClick();
         }}
       >
         ADD COLOR
       </button>
-      <button
-      >QUIT COLOR</button>
+      <button onClick={() => handleMinusColorClick()}>QUIT COLOR</button>
     </div>
   );
 };
-
 export default Page;
