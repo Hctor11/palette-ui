@@ -81,6 +81,9 @@ const Page = () => {
             <button id="button" onClick={() => handleMinusColorClick()}>
               <Image src="/delicon.svg" width={32} height={32} alt="icon" />
             </button>
+            <button id="button" onClick={() => handleSpanClick(`${hslToHex(color)}`)}>
+              <Image src="/copyicon.svg" width={32} height={32} alt="icon" />
+            </button>
           </div>
         ))}
       </div>
@@ -88,6 +91,10 @@ const Page = () => {
         className="generate-button"
         onClick={() => setPalette(generatePalette(numberOfColors))}
         onKeyDown={handleSpaceGeneration}
+        style={{
+          background: `linear-gradient(45deg,${palette[0]}, ${palette[1]}, ${palette[2]})`,
+          transition: '.2s ease-in-out'  
+        }}
       >
         GENERATE
       </button>
